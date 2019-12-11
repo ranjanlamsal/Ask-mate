@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body style='background-color: #3b19d1;'>
+   <h1 style='text-decoration-color: #eee9e9;'> QUESTIONS: </h1> 
+    {% for q in question %}
+    <h1>{{q.title}}</h1>
+    <h2>{{q.question_desc}}</h2>
+    <h1>{{q.question_img}}</h1>
+    <img src="../../media/{{q.question_img}}" style="width:100px;height: 100px;"
+    {% endfor %}
+</body>
+</html>
