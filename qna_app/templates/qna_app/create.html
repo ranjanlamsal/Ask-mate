@@ -1,0 +1,24 @@
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+Title: <input type="text" name="title"> <br> <br>
+Posted By:  <input type="text" name="posted_by"> <br> <br>
+<!--    Describtion: <input type="text" name="question_desc"><br><br>-->
+Describtion: <br>
+    <textarea name="question_desc" cols="40" rows="10" class="vLargeTextField" required="" id="id_question_desc">   </textarea>
+<br> <br>
+    Image: <input type="file" name ="question_img"> <br><br>
+<select name="category">
+    {% for cat in category %}
+
+    <option value="{{cat.id}}">
+    {{cat.title}}
+    </option>
+
+    {% endfor %}
+
+
+
+</select>
+<input type="hidden" name="question_votes" value='0'>
+    <input type="submit" value="Submit">
+</form>

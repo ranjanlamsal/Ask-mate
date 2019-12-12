@@ -1,6 +1,12 @@
 from django.db import models
 
-# Create your models here.
+
+class CategoryModel(models.Model):
+    title= models.CharField(max_length=225)
+    category_desc = models.TextField()
+    def __str__(self):
+        return(self.title)
+
 
 class QuestionModel(models.Model):
     title= models.CharField(max_length=225)
@@ -9,6 +15,9 @@ class QuestionModel(models.Model):
     question_desc = models.TextField()
     question_votes = models.IntegerField(default=0)
     question_img =models.ImageField( upload_to='QuestionImg',blank=True, null=True)
+    category= models.ForeignKey(CategoryModel,on_delete=models.CASCADE)
+
+    objects = models.Manager() #solves issues in objects
 
     def __str__(self):
         return(self.title)
@@ -24,3 +33,8 @@ class AnswerModel(models.Model):
     
     def __str__(self):
         return self.answer_desc[:50] + '......'
+
+
+
+
+

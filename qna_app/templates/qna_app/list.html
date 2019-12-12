@@ -1,0 +1,24 @@
+<html>
+<body>
+
+
+ <h1> QUESTIONS: </h1>
+    {% for q in question %}
+    <h1>{{q.category}}</h1>
+    <h2>{{q.question_desc}}</h2>
+
+    <img src="../../media/{{q.question_img}}" style="width:100px;height: 100px;"/>
+   <br>
+
+ <a href="{% url 'qna:update' q.id %}"><button>Update</button></a>
+ <a href="{% url 'qna:delete' q.id %}"><button>Delete</button></a>
+<a href="{% url 'qna:vote' q.id %}"><button>Vote</button></a>
+
+
+
+    {% endfor %}
+
+</body>
+
+
+</html>

@@ -1,0 +1,15 @@
+
+
+
+
+
+
+
+<form method="post" enctype="multimedia/form-data">
+    {% csrf_token %}
+    Name*: <input type="text" name="answered_by">
+    Comment*= <input type="text" name="answer_desc">
+    Image: <input type="file" name="answer_img">
+    <input type="submit" value="Submit" />
+</form>
+
